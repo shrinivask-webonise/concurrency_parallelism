@@ -81,7 +81,7 @@ def main():
     chopsticks = [ChopStick(i) for i in range(forks)]
 
 
-    philosophers = [Philosopher(i, chopsticks[i], chopsticks[(i+1)%n], semaphore) for i in range(forks)]
+    philosophers = [Philosopher(i, chopsticks[i], chopsticks[(i+1)%forks], semaphore) for i in range(forks)]
 
     for i in range(forks):
         philosophers[i].start()
